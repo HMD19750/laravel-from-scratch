@@ -13,6 +13,8 @@ class Post extends Model
 
     protected $fillable = ['title', 'excerpt', 'body'];
 
+    protected $width=['category','author'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
