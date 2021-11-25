@@ -8,7 +8,7 @@
     {{ $trigger }}
 
     {{-- Links --}}
-    <div x-show="show" class="absolute my-4 bg-gray-100 w-full rounded-xl" style="display:none">
+    <div x-show="show" class="absolute my-4 bg-gray-100 w-full rounded-xl overflow-auto max-h-52" style="display:none">
         {{ $slot }}
     </div>
 </div>

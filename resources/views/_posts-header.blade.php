@@ -2,17 +2,11 @@
 
     <div class="max-w-xl mx-auto">
         <h1 class="text-4xl">Latest <span class="text-blue-500">Laravel From Scratch</span> News</h1>
-        <h2 class="inline-flex mt-3">
-            By Hubert van Dongen
-            <img src="./images/lary-head.svg"></img>
-        </h2>
-        <p class="text-sm mt-14">
-            This is the blog of Laracasts.com. Most likely we are not going to maintain this blog. So be aware. I have
-            warned you!!
-        </p>
+
+
     </div>
 
-    <div class="flex justify-center mt-8 space-x-4 items-start">
+    <div class="flex justify-center mt-4 space-x-4 items-start">
         <!-- Category -->
         <span class="relative inline-block  inline-flex items-start ">
 
