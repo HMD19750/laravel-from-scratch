@@ -17,12 +17,18 @@ class Post extends Model
 
     public function scopeFilter($query, array $filters)
     {
+        $query->when($filters['search'] ?? false, fn ($query, $search) =>
+        $query
+            ->where('title', 'like', '%' . $search . '%')
+            ->orWhere('body', 'like', '%' . $search . '%'));
 
-        if ($filters['search'] ?? false) {
+        $query->when(
+            $filters['category'] ?? false,
+            fn ($query, $category) =>
             $query
-                ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('body', 'like', '%' . request('search') . '%');
-        }
+                ->whereHas('category', fn ($query) =>
+                $query->where('slug', $category))
+        );
     }
 
     public function category()
