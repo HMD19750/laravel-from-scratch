@@ -44,7 +44,7 @@
         <span class="relative inline-block rounded-xl inline-flex items-center px-3 py-2 bg-gray-100">
             <form method="GET" action="#">
                 <input type="text" name="search" placeholder="Find something"
-                    class="font-semibold text-sm bg-transparent placeholder-black ">
+                    class="font-semibold text-sm bg-transparent placeholder-black " value="{{ request('search')  }}">
             </form>
         </span>
     </div>

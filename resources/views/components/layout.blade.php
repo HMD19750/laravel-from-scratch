@@ -17,7 +17,9 @@
             <div>
                 <a href="/" class="text-xs  font-bold uppercase">Home Page</a>
 
-                <a href="#" class="px-3 py-3 uppercase bg-blue-500 ml-3 text-xs font-semibold text-white rounded-full">Subscribe for updates</a>
+                <a href="#"
+                    class="px-3 py-3 uppercase bg-blue-500 ml-3 text-xs font-semibold text-white rounded-full">Subscribe
+                    for updates</a>
             </div>
         </nav>
 
@@ -31,11 +33,12 @@
 
             <div class="mt-10">
                 <div class="relative inline-block mx-auto  py-3 px-5 rounded-full bg-gray-200">
-                    <img src="./images/mailbox-icon.svg" alt="mailbox">
+                    <img src="/images/mailbox-icon.svg" alt="mailbox">
 
                     <form method="POST" action="#" class="flex text-sm">
                         <input type="text" placeholder="Your email address" class="pl-4 bg-transparent">
-                        <button type="submit" class="px-3 py-3 uppercase bg-blue-500 ml-3 text-xs font-semibold text-white rounded-full">Subscribe</button>
+                        <button type="submit"
+                            class="px-3 py-3 uppercase bg-blue-500 ml-3 text-xs font-semibold text-white rounded-full">Subscribe</button>
                     </form>
                 </div>
             </div>

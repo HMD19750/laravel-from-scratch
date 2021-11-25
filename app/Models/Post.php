@@ -13,7 +13,17 @@ class Post extends Model
 
     protected $fillable = ['title', 'excerpt', 'body'];
 
-    protected $width=['category','author'];
+    protected $width = ['category', 'author'];
+
+    public function scopeFilter($query, array $filters)
+    {
+
+        if ($filters['search'] ?? false) {
+            $query
+                ->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('body', 'like', '%' . request('search') . '%');
+        }
+    }
 
     public function category()
     {
@@ -22,6 +32,6 @@ class Post extends Model
 
     public function author()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
