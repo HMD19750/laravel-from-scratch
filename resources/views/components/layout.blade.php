@@ -27,7 +27,7 @@
 
 
         <footer class="py-16 px-10 mt-15 text-center bg-gray-100 border border-black border-opacity-5 rounded-xl">
-            <img src="./images/lary-newsletter-icon.png" alt="Larry" class="mx-auto" style="width:145px;">
+            <img src="/images/lary-newsletter-icon.png" alt="Larry" class="mx-auto" style="width:145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm">Promise to keep the mailbox clean. No bugs.</p>
 
