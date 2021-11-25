@@ -10,10 +10,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('posts', [
-            'posts' => Post::latest()->filter(request(['search', 'category']))->get(),  //Filter refers to filter scope in Post.php
-            'categories' => Category::all(),
-            'currentCategory' => Category::where('slug', request('category'))->first()
+        return view('posts.index', [
+            'posts' => Post::latest()->filter(request(['search', 'category']))->get()  //Filter refers to filter scope in Post.php
+
         ]);
     }
 
@@ -21,7 +20,7 @@ class PostController extends Controller
     {
         //Find a post by its slug and pass it to a view called "post"
 
-        return view('post', [
+        return view('posts.show', [
             'post' => $post
         ]);
     }

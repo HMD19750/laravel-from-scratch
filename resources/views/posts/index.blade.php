@@ -1,6 +1,6 @@
 <x-layout>
 
-    @include('_posts-header')
+    @include('posts._header')
 
     <main class="mx-auto max-w-6xl mt-10 space-y-6">
 
