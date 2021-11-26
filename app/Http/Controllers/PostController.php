@@ -11,8 +11,10 @@ class PostController extends Controller
     public function index()
     {
         return view('posts.index', [
-            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->get()  //Filter refers to filter scope in Post.php
-
+            'posts' => Post::latest()->filter(
+                request(['search', 'category', 'author'])
+            )->paginate()       //Filter refers to filter scope in Post.php
+                ->withQueryString()     //Behoudt querystring bij pagination
         ]);
     }
 
