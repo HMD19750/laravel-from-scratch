@@ -11,7 +11,9 @@
     <section class="px-6 py-8 ">
         <nav class="flex justify-between items-center">
             <div>
-                <img src="/images/logo.svg" alt="Laracasts logo" width="165" height="16">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="Laracasts logo" width="165" height="16">
+                </a>
             </div>
 
             <div>

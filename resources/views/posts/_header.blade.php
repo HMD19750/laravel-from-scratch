@@ -15,17 +15,20 @@
 
         </span>
         <!-- Other filters -->
-        <span class="relative inline-block  inline-flex items-center">
+        {{-- <span class="relative inline-block  inline-flex items-center">
             <select class="bg-gray-100 rounded-xl py-2 pl-3 pr-2 text-sm font-semibold">
                 <option value="category" disable selected>Other filters</option>
                 <option value="foo">Foo</option>
                 <option value="bar">Bar</option>
-            </select>
+            </select> --}}
 
         </span>
         <!-- Search -->
         <span class="relative inline-block rounded-xl inline-flex items-center px-3 py-2 bg-gray-100">
             <form method="GET" action="#">
+                @if(request('category'))
+                    <input type="hidden" name="category" value="{{ request('category') }}">    {{-- Voor search als al category is geselecteerd  --}}
+                @endif
                 <input type="text" name="search" placeholder="Find something"
                     class="font-semibold text-sm bg-transparent placeholder-black " value="{{ request('search')  }}">
             </form>
