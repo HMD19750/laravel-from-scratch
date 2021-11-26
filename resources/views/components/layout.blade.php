@@ -46,4 +46,7 @@
             </div>
         </footer>
     </section>
+
+    {{-- Flash message die met Alpine is geanimeerd --}}
+    <x-flash />
 </body>
