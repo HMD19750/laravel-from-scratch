@@ -29,9 +29,7 @@
                 </div>
 
                 <div class="m-6">
-                    <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
-                        Log In
-                    </button>
+                    <x-submit-button>Login</x-submit-button>
 
             </form>
         </main>
