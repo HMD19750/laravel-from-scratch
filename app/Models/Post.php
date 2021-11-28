@@ -12,7 +12,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'excerpt', 'body'];
+    protected $guarded = [];
 
     protected $width = ['category', 'author'];
 

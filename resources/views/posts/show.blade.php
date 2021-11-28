@@ -8,12 +8,13 @@
                 <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
                     <img src="/images/illustration-1.png" alt="" class="rounded-xl">
 
+
                     <p class="mt-4 block text-gray-400 text-xs">
                         Published <time>{{ $post->created_at->diffForHumans() }}</time>
                     </p>
 
                     <div class="flex items-center lg:justify-center text-sm mt-4">
-                        <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                        <img src="https://i.pravatar.cc/50?u={{ $post->author->id }}" alt="" width="50" height="50" class="rounded-xl">
                         <div class="ml-3 text-left">
                             <h5 class="font-bold">
                                 <a href="/?author={{ $post->author->username }}">
