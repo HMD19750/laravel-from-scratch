@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="m-6">
-                    <x-submit-button>Submit</x-submit-button>
+                    <x-form.button>Submit</x-form.button>
             </form>
         </main>
     </section>

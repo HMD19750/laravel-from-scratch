@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="m-6">
-                    <x-submit-button>Login</x-submit-button>
+                    <x-form.button>Login</x-form.button>
 
             </form>
         </main>
