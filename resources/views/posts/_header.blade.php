@@ -8,7 +8,7 @@
 
     <div class="flex items-start justify-center mt-4 space-x-4">
         <!-- Category -->
-        <span class="relative inline-flex items-start inline-block w-32">
+        <span class="relative bg-gray-100 lg:inline-flex rounded-xl">
             <x-category-dropdown />
         </span>
 
