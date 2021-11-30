@@ -1,7 +1,7 @@
 <x-dropdown>
 
-    <x-slot name="trigger">
-        <button @click="show=!show" class="font-semibold text-left flex pl-3  w-full">
+    <x-slot name="trigger" >
+        <button @click="show=!show" class="flex w-full pl-3 font-semibold text-left">
             {{ isset($currentCategory) ? ucwords($currentCategory->name) : 'Categories' }}
             <x-down-arrow class="absolute pointer-events-none" style="right:12px;"></x-down-arrow>
         </button>

@@ -15,7 +15,7 @@
 
 <body style="font-family: Open Sans,sans-serif">
     <section class="px-6 py-8 ">
-        <nav class="flex justify-between items-center">
+        <nav class="flex items-center justify-between">
             <div>
                 <a href="/">
                     <img src="/images/logo.svg" alt="Laracasts logo" width="165" height="16">
@@ -27,16 +27,27 @@
                 <a href="/register" class="text-xs font-bold uppercase">Register</a>
                 <a href="/login" class="ml-6 text-xs font-bold uppercase">Log in</a>
                 @else
-                <span class="text-xs  font-bold uppercase">Welcome {{ auth()->user()->name }}</span>
 
-                <form method="POST" action="/logout" class="text-xs text-blue-500 font-semibold ml-6">
-                    @csrf
-                    <button type="submit">Logout</button>
-                </form>
+                <x-dropdown>
+                    <x-slot name="trigger">
+                        <button class="pl-3 text-xs font-bold uppercase">Welcome {{ auth()->user()->name }}</button>
+                    </x-slot>
+                    <x-dropdown-item href="#" >Dashboard</x-dropdown-item>
+                    <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New post</x-dropdown-item>
+                    <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Logout</x-dropdown-item>
+
+                    <form id="logout-form" method="POST" action="/logout" class="hidden">
+                        @csrf
+                    </form>
+
+                </x-dropdown>
+
+
+
                 @endguest
 
                 <a href="#newsletter"
-                    class="px-3 py-3 uppercase bg-blue-500 ml-3 text-xs font-semibold text-white rounded-full">Subscribe
+                    class="px-3 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">Subscribe
                     for updates</a>
             </div>
         </nav>
@@ -45,18 +56,18 @@
 
 
         <footer id="newsletter"
-            class="py-16 px-10 mt-15 text-center bg-gray-100 border border-black border-opacity-5 rounded-xl">
+            class="px-10 py-16 text-center bg-gray-100 border border-black mt-15 border-opacity-5 rounded-xl">
             <img src="/images/lary-newsletter-icon.png" alt="Larry" class="mx-auto" style="width:145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm">Promise to keep the mailbox clean. No bugs.</p>
 
             <div class="mt-10">
-                <div class="relative inline-block mx-auto  py-3 px-5 rounded-full bg-gray-200">
+                <div class="relative inline-block px-5 py-3 mx-auto bg-gray-200 rounded-full">
                     <img src="/images/mailbox-icon.svg" alt="mailbox">
 
                     <form method="POST" action="/newsletter" class="flex text-sm">
                         @csrf
-                        
+
                         <div>
                             <input type="email" name="email" id="email" placeholder="Your email address"
                                 class="pl-4 bg-transparent">
@@ -67,7 +78,7 @@
                         </div>
 
                         <button type="submit"
-                            class="px-3 py-3 uppercase bg-blue-500 ml-3 text-xs font-semibold text-white rounded-full">Subscribe</button>
+                            class="px-3 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">Subscribe</button>
                     </form>
                 </div>
             </div>

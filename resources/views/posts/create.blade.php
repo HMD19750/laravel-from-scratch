@@ -1,41 +1,36 @@
 <x-layout>
-    <section class="px-6 py-8">
 
-        <x-panel class="max-w-md mx-auto">
-            <h1 class="font-bold text-lg">
-                Publish a new post
-            </h1>
+    <x-setting heading="Publish New Post">
 
-            <form method="POST" action="/admin/posts" enctype="multipart/form-data" class="mt-10">
 
-                @csrf
+    <form method="POST" action="/admin/posts" enctype="multipart/form-data" class="mt-10">
 
-                <x-form.input name="title"/>
-                <x-form.input name="slug"/>
-                <x-form.input name="thumbnal" type="file" />
+        @csrf
 
-                <x-form.textarea name="excerpt" />
-                <x-form.textarea name="body" />
+        <x-form.input name="title"/>
+        <x-form.input name="slug"/>
+        <x-form.input name="thumbnal" type="file" />
 
-                <x-form.field>
-                    <x-form.label name="category" />
+        <x-form.textarea name="excerpt" />
+        <x-form.textarea name="body" />
 
-                    <select name="category_id" id=category_id>
-                        @foreach(\App\Models\Category::all() as $category)
-                        <option value="{{ $category->id }}" {{ old('category_id')==$category->id ? 'selected' : '' }}>
-                            {{ ucwords($category->name) }}
-                        </option>
-                        @endforeach
-                    </select>
+        <x-form.field>
+            <x-form.label name="category" />
 
-                    <x-form.error name="category" />
+            <select name="category_id" id=category_id>
+                @foreach(\App\Models\Category::all() as $category)
+                <option value="{{ $category->id }}" {{ old('category_id')==$category->id ? 'selected' : '' }}>
+                    {{ ucwords($category->name) }}
+                </option>
+                @endforeach
+            </select>
 
-                </x-form.field>
+            <x-form.error name="category" />
 
-                <x-form.button>Publish</x-form.button>
+        </x-form.field>
 
-            </form>
-        </x-panel>
+        <x-form.button>Publish</x-form.button>
 
-    </section>
+    </form>
+</x-setting>
 </x-layout>

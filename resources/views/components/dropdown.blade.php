@@ -1,14 +1,14 @@
 @props(['trigger'])
 
-<div x-data="{ show : false}" @click.away="show=false"
-    class="bg-gray-100 rounded-xl py-2  pr-2 text-sm font-semibold w-32">
+<div x-data="{ show : false}" @click.away="show=false" class="relative py-2 pr-2 text-sm font-semibold bg-gray-100 rounded-xl ">
 
     {{-- Trigger --}}
-
+<div @click="show = !show">
     {{ $trigger }}
-
+</div>
     {{-- Links --}}
-    <div x-show="show" class="absolute my-4 bg-gray-100 w-full rounded-xl overflow-auto max-h-52" style="display:none">
+    <div x-show="show" class="absolute w-full my-4 overflow-auto bg-gray-100 rounded-xl max-h-52" style="display:none">
         {{ $slot }}
     </div>
+
 </div>
