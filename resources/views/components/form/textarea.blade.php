@@ -10,7 +10,7 @@
             id="{{ $name }}"
             required
         >
-            {{ old($name) }}
+            {{ $slot ?? old($name) }}
         </textarea>
 
 

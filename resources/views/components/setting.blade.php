@@ -7,14 +7,14 @@
     </h1>
 
     <div class="flex">
-        <aside class="w-48">
+        <aside class="w-48 flex-shrink-0">
             <h2 class="mb-4 font-semibold">Links</h2>
             <ul>
                 <li>
                     <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ?'text-blue-500' : '' }}">New Post</a>
                 </li>
                 <li>
-                    <a href="/admin/posts/dashboard" class="{{ request()->is('admin/posts/dashboard') ?'text-blue-500' : '' }}">Dashboard</a>
+                    <a href="/admin/posts" class="{{ request()->is('admin/posts') ?'text-blue-500' : '' }}">All Posts</a>
                 </li>
             </ul>
         </aside>
