@@ -32,8 +32,10 @@
                     <x-slot name="trigger">
                         <button class="pl-3 text-xs font-bold uppercase">Welcome {{ auth()->user()->name }}</button>
                     </x-slot>
+                    @if(auth()->user()->can('admin'))
                     <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Dashboard</x-dropdown-item>
                     <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New post</x-dropdown-item>
+                    @endif
                     <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Logout</x-dropdown-item>
 
                     <form id="logout-form" method="POST" action="/logout" class="hidden">
@@ -61,8 +63,9 @@
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm">Promise to keep the mailbox clean. No bugs.</p>
 
-            <div class="mt-10">
+            <div class="mt-10 ">
                 <div class="relative inline-block px-5 py-3 mx-auto bg-gray-200 rounded-full">
+                    <div class="flex">
                     <img src="/images/mailbox-icon.svg" alt="mailbox">
 
                     <form method="POST" action="/newsletter" class="flex text-sm">
@@ -70,7 +73,7 @@
 
                         <div>
                             <input type="email" name="email" id="email" placeholder="Your email address"
-                                class="pl-4 bg-transparent">
+                                class="pl-4 pt-2 bg-transparent">
 
                             @error('email')
                                 <span class="text-xs text-red-500">{{ $message }}</span>
@@ -80,6 +83,7 @@
                         <button type="submit"
                             class="px-3 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">Subscribe</button>
                     </form>
+                </div>
                 </div>
             </div>
         </footer>
